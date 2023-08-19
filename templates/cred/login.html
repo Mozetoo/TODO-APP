@@ -1,0 +1,41 @@
+{% extends 'siginbase.html' %}
+
+{% block content %}
+<section class="custom-bg" >
+    <div class="row align-items-center g-lg-5 p-5">
+        <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="display-4 fw-bold lh-1 text-danger mb-3">Join Us</h1>
+            <p class="col-lg-10 fs-4 text-white">Revolutionize the way you approach your tasks and achieve a new level of efficiency with Timeruns.
+                A journey of a thousand completed task begins in one Sign Up.</p>
+        </div>
+       <div class="col-md-10 mx-auto col-lg-5">
+            <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="POST">{% csrf_token %}
+                {% if form.errors %}
+                    <p class="alert alert-danger">Invalid username or password.</p>
+                {% endif %}
+                <div class="form-floating mb-3">
+                    {{ form.username.label_tag }}
+                    {{ form.username }}
+                    {% if form.username.errors %}
+                        <p class="alert alert-danger">{{ form.username.errors }}</p>
+                    {% endif %}
+                </div>
+                <div class="form-floating mb-3">
+                    {{ form.password.label_tag }}
+                    {{ form.password }}
+                    {% if form.password.errors %}
+                        <p class="alert alert-danger">{{ form.password.errors }}</p>
+                    {% endif %}
+                </div>
+                <div class="checkbox mb-3">
+                    <p class="">Not a member yet? <a href="{% url 'signup' %}">Signup</a> </p>
+                </div>
+                <button class="w-100 btn btn-lg btn-danger mt-2" type="submit">Log In</button>
+                <hr class="my-4">
+                <small class="text-body-secondary">By clicking Login, you agree to the terms of use.</small>
+            </form>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

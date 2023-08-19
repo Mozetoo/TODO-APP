@@ -1,0 +1,209 @@
+.page-nav {
+    background-color: #222831;
+}
+.nav-link {
+    font-size: 20px; /* Adjust the font size as needed */
+    color: #DDDDDD; /* Set the desired color for the text */
+}
+
+/* Style the SVG image */
+.svg-icon {
+    width: 30px; /* Set the desired width for the SVG image */
+    height: 30px; /* Set the desired height for the SVG image */
+    fill: #DDDDDD; /* Set the desired color for the SVG image */
+    margin-right: 10px; /* Add some right margin to separate the image from the text */
+}
+.logo-text {
+    color: #DDDDDD;
+}
+#hero-page {
+    background-color: white;
+
+}
+.slide-in {
+    opacity: 0; /* Initially set opacity to 0 to hide the columns */
+    transform: translateY(50px); /* Slide the columns down by 50px initially */
+    transition: opacity 1s ease, transform 1s ease; /* Define the animation properties */
+}
+
+/* Add another custom CSS class to reveal the columns when they are in view */
+.slide-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.text-bg-light {
+    background-color: white;
+}
+#feature-section{
+    background-color: black;
+}
+/* Animation classes for text and image divs */
+.text-animate-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.image-animate-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Add styles for the image div to make it visible initially */
+.image-animate-right img {
+    opacity: 1;
+}
+
+/* Animation trigger class */
+.animate-in {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+
+
+#footer-section {
+    background-color: black;
+}
+
+.page-nav {
+    background-color: #222831;
+}
+.nav-link {
+    font-size: 20px; /* Adjust the font size as needed */
+    color: #DDDDDD; /* Set the desired color for the text */
+}
+
+/* Style the SVG image */
+.svg-icon {
+    width: 30px; /* Set the desired width for the SVG image */
+    height: 30px; /* Set the desired height for the SVG image */
+    fill: #DDDDDD; /* Set the desired color for the SVG image */
+    margin-right: 10px; /* Add some right margin to separate the image from the text */
+}
+.logo-text {
+    color: #DDDDDD;
+}
+#hero-page {
+    background-color: white;
+
+}
+.slide-in {
+    opacity: 0; /* Initially set opacity to 0 to hide the columns */
+    transform: translateY(50px); /* Slide the columns down by 50px initially */
+    transition: opacity 1s ease, transform 1s ease; /* Define the animation properties */
+}
+
+/* Add another custom CSS class to reveal the columns when they are in view */
+.slide-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom CSS */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.main-content {
+    padding: 1px;
+}
+.logout {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+.sidebar {
+    max-width: 400px; /* Set minimum width to ensure the sidebar does not collapse */
+    height: 100vh;
+    background-color: #f8f9fa; /* Sidebar background color */
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative; /* Position to handle the dropdown */
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar li {
+    margin-bottom: 10px;
+}
+.user-icon {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.nav-pills .nav-link.active {
+    background-color: black; /* Set the background color to red */
+    color: white; /* Set the text color to white */
+    /* Add any other styles you want for the active link */
+}
+.sidebar{
+    background-color:  #F05454;
+}
+.main-content {
+    background-color: white;
+}
+
+.main-content {
+    margin-left: 2px;
+   /* Set the left margin to match the sidebar's width */
+    padding: 2px;
+    overflow-y: auto; /* Enable vertical scrolling for the main content */
+}
+
+.small {
+    background-color: #F05454;
+}
+.task {
+    text-decoration: none;
+}
+.taskdiv {
+    background-color: #F05454;
+}
+
+.checkbox-custom:checked {
+    background-color: green; /* Change to the desired green color */
+}
+.side {
+    background-color: #F05454;
+}
+
+.form-floating label {
+        pointer-events: none;
+        top: 0;
+        left: 0;
+        position: absolute;
+        padding: 7px 10px;
+        opacity: 0.5;
+        transition: all 0.2s ease-in-out;
+    }
+
+    /* Move the label up when input field is not empty (placeholder not shown) */
+.form-floating input:not(:placeholder-shown) ~ label {
+    transform: translateY(-1.5em);
+    opacity: 1;
+}
+.side {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto; /* Enable vertical scrolling for the sidebar if needed */
+}
+.custom-bg {
+    /* Replace 'your-image-url.jpg' with the URL of your desired image */
+    background-image: url('https://images.hdqwalls.com/wallpapers/road-to-mountains-hd.jpg');
+    /* Set background size and positioning as per your preference */
+    background-size: cover;
+    background-position: center;
+}

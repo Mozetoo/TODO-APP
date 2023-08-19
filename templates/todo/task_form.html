@@ -1,0 +1,67 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+     <section class="d-flex">
+    <div class="d-flex flex-column flex-shrink-0  side" style="width: 4.5rem;">
+        <a href="{% url 'todo' %}" class="d-block p-3 link-body-emphasis text-decoration-none icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
+            <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="30" width="34" fill="white" viewBox="0 0 384 512"><path d="M192 0c-41.8 0-77.4 26.7-90.5 64H64C28.7 64 0 92.7 0 128V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H282.5C269.4 26.7 233.8 0 192 0zm0 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64zM72 272a24 24 0 1 1 48 0 24 24 0 1 1 -48 0zm104-16H304c8.8 0 16 7.2 16 16s-7.2 16-16 16H176c-8.8 0-16-7.2-16-16s7.2-16 16-16zM72 368a24 24 0 1 1 48 0 24 24 0 1 1 -48 0zm88 0c0-8.8 7.2-16 16-16H304c8.8 0 16 7.2 16 16s-7.2 16-16 16H176c-8.8 0-16-7.2-16-16z"/></svg>
+            <span class="visually-hidden">Timeruns</span>
+        </a>
+        <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+            <li class="nav-item">
+                <a href="{% url 'todo' %}" class="nav-link py-3  rounded-0 icon" aria-current="page" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Home" data-bs-original-title="Home">
+                    <i class="fa-solid fa-house me-2" style="color: white;"></i>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'tasks' %}" class="nav-link active py-3  rounded-0 icon" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Tasks" data-bs-original-title="Tasks">
+                    <i class="fa-solid fa-layer-group me-2" style="color: lightseagreen;"></i>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'pending' %}" class="nav-link py-3  rounded-0 icon" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Pending" data-bs-original-title="Pending">
+                    <i class="fa-regular fa-hourglass fa-spin me-2" style="color: lightblue;"></i>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'complete' %}" class="nav-link py-3 rounded-0 icon" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Completed" data-bs-original-title="Completed">
+                    <i class="fa-solid fa-check me-2" style="color: lightgreen;"></i>
+                </a>
+            </li>
+        </ul>
+        <div class="dropdown user">
+            <a href="#" class="d-flex align-items-center justify-content-center p-3 link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" height="30" width="34" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg>
+            </a>
+            <ul class="dropdown-menu text-small shadow">
+                <li><a class="dropdown-item" href="{% url 'logout' %}">Sign out</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-content p-3 w-100">
+    <div class="container py-2">
+        <div class="p-5 cre rounded-3 mt-3 shadow-lg">
+            <form method="POST" class="needs-validation" novalidate>{% csrf_token %}
+                {% for field in form %}
+                <div class="mb-3">
+                    <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in field.errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-danger">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+</section>
+{% endblock %}
